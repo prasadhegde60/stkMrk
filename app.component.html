@@ -1,0 +1,41 @@
+<ion-app>
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar color="light">
+        <ion-title>
+          <ion-label>Trade Buddy</ion-label>
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none">
+            <ion-label (click)="onAdminLogin()">Login</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        
+        <ion-menu-toggle>
+          <ion-item lines="none">
+            <ion-label>About Us</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        
+        <ion-menu-toggle>
+          <ion-item lines="none">
+            <ion-label>Contact Us</ion-label>
+          </ion-item>
+        </ion-menu-toggle>  
+        
+        <div *ngIf="isLoggedIn">
+        <ion-menu-toggle>
+          <ion-item lines="none"  (click)="logout()">
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>  
+        </div>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>
